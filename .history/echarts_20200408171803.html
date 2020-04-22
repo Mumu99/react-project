@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>问题不可能由导致这种问题的思维方式来解决</title>
+</head>
+
+<body>
+  <div id="main" style="width: 600px;height:400px;"></div>
+  <script src="https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js"></script>
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+      title: { // 图标的标题
+        text: '服装报表',
+        textStyle: {
+          color: 'green'
+        }
+      },
+      tooltip: { // 提示框的配置
+        showDelay: 100
+      },
+      legend: { // 图例
+        data: ['销量']
+      },
+      // x轴的配置
+      xAxis: {
+        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+      },
+      // y轴的配置
+      yAxis: {},
+      series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+      }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>
